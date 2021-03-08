@@ -1,0 +1,83 @@
+<div class="container">
+
+  <div class="logo">
+    <img src="https://www.freelogoservices.com/api/main/images/1j+ojFVDOMkX9Wytexe43D6khvaDpRRLnxzNwXs1M3EMoAJtliEoh...do9fs+"/>
+  </div>
+
+  <p class="iSesion">Has iniciado sesión</p>
+
+  <hr />
+
+  <form class="form-row">
+
+    <p class="inserteDatos"> Inserte los datos de la moneda </p>
+
+    <div class="form-group col-md-2 nombre">
+      <input type="text" name="nombre" id="nombre" placeholder="Nombre de moneda" class="form-control"
+        [(ngModel)]="nombre1Input">
+    </div>
+
+    <div class="form-group col-md-2 simbolo">
+      <input type="text" name="simbolo" id="simbolo" placeholder="Simbolo" class="form-control"
+        [(ngModel)]="simbolo1Input">
+    </div>
+
+    <div class="form-group col-md-2 suma">
+      <input type="text" name="suma" id="suma" placeholder="Simbolo" class="form-control"
+        [(ngModel)]="sumaInput">
+    </div>
+
+    <div class="form-group col-md-2 precio1">
+      <input type="text" name="valor" id="valor" placeholder="Precio de Compra" class="form-control"
+        [(ngModel)]="valor1Input">
+    </div>
+
+    <div class="form-group col-md-2 precio2">
+      <input type="text" name="valor2" id="valor2" placeholder="Precio de Compra" class="form-control"
+        [(ngModel)]="valor2Input">
+    </div>
+
+    <div class="col botonagregar">
+      <button type="submit" class="btn btn-primary" (click)="onAgregarMoneda()">Agregar</button>
+    </div>
+
+  </form>
+
+  <hr />
+
+  <!--<div class="row">
+    <div class="col-xs-12">
+      <div *ngFor="let moneda of monedas; let i = index">
+        {{i+1}}: {{moneda.nombre1}} {{moneda.simbolo1}} {{moneda.valor1}}
+      </div>
+    </div>
+  </div>-->
+
+
+
+
+  <table>
+    <tr>
+      <td>Nombre</td>
+      <td>Símbolo</td>
+      <td>Cantidad</td>
+      <td>Precio de Compra</td>
+      <td>Precio Actual</td>
+      <td>Trading Pair</td>
+    </tr>
+    <tr *ngFor="let moneda of monedas; let i = index">
+      <td>{{ moneda.nombre1 }}</td>
+      <td>{{ moneda.simbolo1 }}</td>
+      <td>{{ moneda.suma }}</td>
+      <td>{{ moneda.valor1 }}</td>
+      <td>{{ moneda.valor2 }}</td>
+      <td>{{ moneda.simbolo1 }} / BTC</td>
+      <td> <button class='btn btn-danger' id="remove" (click)="deleteRow(moneda)">Delete</button> </td>
+    </tr>
+  </table>
+
+
+  <br/>
+  <button class="botonsalir" (click)="logout()">Salir</button>
+
+</div>
